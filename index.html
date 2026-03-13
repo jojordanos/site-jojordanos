@@ -7,50 +7,61 @@
   <style>
     :root {
       --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      --card-bg: rgba(255, 255, 255, 0.9);
+      --card-bg: #ffffff;
       --text-color: #333333;
       --title-color: #666666;
       --border-color: #dddddd;
     }
-
     [data-theme="dark"] {
       --bg-gradient: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
-      --card-bg: rgba(45, 45, 45, 0.95);
+      --card-bg: #2d2d2d;
       --text-color: #ffffff;
       --title-color: #aaaaaa;
       --border-color: #444444;
     }
-
-    /* Animation de l'arrière-plan */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: var(--bg-gradient);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite; /* Fond animé */
+      animation: gradientBG 15s ease infinite;
       color: var(--text-color);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      padding: 20px;
-      transition: background 0.5s ease;
     }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .card {
       background: var(--card-bg);
-      backdrop-filter: blur(10px); /* Effet de flou derrière la carte */
       padding: 25px;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      width: 350px;
+      text-align: center;
+      z-index: 10;
+    }
+    .btn {
+      display: block;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      background: #5865F2;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>jojordanos - TEST</h1>
+    <p>Si tu vois ce message, la mise à jour fonctionne !</p>
+    <a href="#" class="btn">Bouton Test</a>
+  </div>
+</body>
+</html>
