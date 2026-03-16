@@ -10,11 +10,6 @@
       --card-bg: #ffffff;
       --text-color: #333333;
     }
-    [data-theme="dark"] {
-      --bg-gradient: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
-      --card-bg: #2d2d2d;
-      --text-color: #ffffff;
-    }
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -35,44 +30,48 @@
     }
     .card {
       background: var(--card-bg);
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
       width: 100%;
-      max-width: 400px;
+      max-width: 350px;
       text-align: center;
     }
+    h1 { margin-bottom: 5px; font-size: 28px; }
+    .status { color: #23a55a; font-size: 14px; font-weight: bold; margin-bottom: 20px; }
     .btn {
-      display: inline-block;
-      width: 80%;
-      padding: 12px;
-      margin: 5px 0;
-      border-radius: 12px;
+      display: block;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 15px;
       text-decoration: none;
       color: white;
       font-weight: bold;
-      background: #5865F2;
+      transition: 0.3s;
     }
-    .chat-area {
-      margin-top: 20px;
-      border-radius: 15px;
-      overflow: hidden;
-      height: 350px;
-      border: 1px solid rgba(0,0,0,0.1);
-    }
+    .yt { background: #FF0000; }
+    .dc { background: #5865F2; }
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+    .video-grid img { width: 100%; border-radius: 10px; border: 2px solid #eee; }
   </style>
 </head>
 <body>
 
   <div class="card">
     <h1>jojordanos</h1>
-    <a class="btn" href="https://www.youtube.com/@jojordanos" target="_blank" style="background:#FF0000;">YouTube</a>
-    <a class="btn" href="https://discord.gg/votre_invite" target="_blank">Rejoindre Discord</a>
+    <div class="status">● EN LIGNE</div>
 
-    <div style="margin-top:20px; font-weight:bold; font-size:12px; text-transform:uppercase;">Chat en direct</div>
-    
-    <div class="chat-area">
-      <iframe src="https://e.widgetbot.io/channels/1437479306266939524/1437479306266939524" height="100%" width="100%" frameborder="0"></iframe>
+    <a href="https://www.youtube.com/@jojordanos" class="btn yt" target="_blank">MA CHAÎNE YOUTUBE</a>
+    <a href="https://discord.gg/votre_invite" class="btn dc" target="_blank">MON SERVEUR DISCORD</a>
+
+    <div style="margin-top: 25px; font-weight: bold; font-size: 12px; color: #888;">DERNIÈRES VIDÉOS</div>
+    <div class="video-grid">
+      <a href="https://www.youtube.com/watch?v=v4yKcQtYszs" target="_blank">
+        <img src="https://img.youtube.com/vi/v4yKcQtYszs/mqdefault.jpg" alt="Video 1">
+      </a>
+      <a href="https://www.youtube.com/watch?v=O8M5MxS4hyk" target="_blank">
+        <img src="https://img.youtube.com/vi/O8M5MxS4hyk/mqdefault.jpg" alt="Video 2">
+      </a>
     </div>
   </div>
 
