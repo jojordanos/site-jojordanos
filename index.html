@@ -11,6 +11,15 @@
       --text-color: #ffffff;
     }
 
+    /* --- CURSEUR ÉPÉE --- */
+    html, body {
+      cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), auto !important;
+    }
+    
+    a, button, .btn, iframe {
+      cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), pointer !important;
+    }
+
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -28,9 +37,10 @@
       background: var(--bg-gradient);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-      display: flex; justify-content: center; align-items: center;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
       min-height: 100vh; margin: 0; padding: 20px;
       color: var(--text-color);
+      overflow-x: hidden;
     }
 
     .card {
@@ -42,19 +52,24 @@
       box-shadow: 0 25px 50px rgba(0,0,0,0.5);
       width: 100%; max-width: 480px; text-align: center;
       animation: float 6s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .profile-img {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 3px solid #00d2ff; box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+      margin-bottom: 15px; object-fit: cover;
     }
 
     h1 { 
-      margin: 0; font-size: 2.5em; 
+      margin: 0; font-size: 2.2em; 
       background: linear-gradient(to right, #00d2ff, #3a7bd5);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     .sub-counter {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
-      padding: 10px; margin: 15px 0;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: rgba(0, 0, 0, 0.3); border-radius: 15px;
+      padding: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; gap: 10px;
     }
 
     .btn {
@@ -69,19 +84,25 @@
     .chat-container {
       margin-top: 25px; border-radius: 20px; overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.1); 
-      height: 400px; background: #2f3136;
+      height: 350px; background: #2f3136;
     }
     
-    /* Style pour l'adresse mail */
-    .contact-mail {
-      margin-top: 20px;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
-      display: inline-block;
-      transition: color 0.3s;
+    /* --- LECTEUR MUSIQUE FLOTTANT --- */
+    .music-player {
+      position: fixed; bottom: 20px; right: 20px;
+      width: 300px; height: 80px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 20px; border: 1px solid #00d2ff;
+      overflow: hidden; z-index: 100;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    .contact-mail:hover { color: #00d2ff; }
+
+    .mods-section {
+      margin-top: 25px; padding: 15px; background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 15px;
+    }
+
+    .mod-name { font-size: 16px; color: #ffd700; font-weight: bold; }
 
     iframe { border: none; width: 100%; height: 100%; }
 
@@ -98,32 +119,35 @@
   <div class="bg-dots"></div>
 
   <div class="card">
+    <img src="j.jpg" alt="Logo jojordanos" class="profile-img">
     <h1>jojordanos</h1>
-    <div style="color: #23a55a; font-size: 14px; font-weight: bold;">● ONLINE</div>
+    <div style="color: #23a55a; font-size: 14px; font-weight: bold;">● SITE OFFICIEL</div>
 
     <div class="sub-counter">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" width="30" alt="YT">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" width="25" alt="YT">
       <span>Abonnés : </span>
       <span style="font-weight: bold; color: #FF0000;">15+</span>
     </div>
     
-    <a href="https://www.youtube.com/@jojordanos" class="btn yt" target="_blank">🎬 S'ABONNER</a>
-    
-    <div style="margin: 20px 0 10px; font-weight:bold; font-size:11px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing: 2px;">
-      COMMUNITY CHAT
-    </div>
+    <a href="https://www.youtube.com/@jojordanos" class="btn yt" target="_blank">🎬 REJOINDRE LA CHAÎNE</a>
     
     <div class="chat-container">
       <iframe src="https://e.widgetbot.io/channels/1437479306266939524/1437479308305109073?api=1"></iframe>
     </div>
 
-    <a href="mailto:jonasjeanniard@outlook.fr" class="contact-mail">
+    <div class="mods-section">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 5px;">Modérateur</div>
+      <div class="mod-name">🛡️ Pacman</div>
+    </div>
+
+    <a href="mailto:jonasjeanniard@outlook.fr" style="margin-top:15px; display:inline-block; color:rgba(255,255,255,0.5); text-decoration:none; font-size:12px;">
       📧 Contact : jonasjeanniard@outlook.fr
     </a>
+  </div>
 
-    <p style="font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 20px;">
-      © 2026 jojordanos
-    </p>
+  <div class="music-player">
+    <iframe src="https://www.youtube.com/embed/O8M5MxS4hyk?list=RDEM7rT9oK-iB0f_uA7x_H_1pw&autoplay=0&controls=1&loop=1" 
+            allow="autoplay"></iframe>
   </div>
 
 </body>
