@@ -52,7 +52,7 @@
       box-shadow: 0 25px 50px rgba(0,0,0,0.5);
       width: 100%; max-width: 480px; text-align: center;
       animation: float 6s ease-in-out infinite;
-      z-index: 1;
+      margin-bottom: 120px; /* Espace pour le lecteur */
     }
 
     .profile-img {
@@ -87,14 +87,15 @@
       height: 350px; background: #2f3136;
     }
     
-    /* --- LECTEUR MUSIQUE FLOTTANT --- */
-    .music-player {
-      position: fixed; bottom: 20px; right: 20px;
-      width: 300px; height: 80px;
+    /* --- BARRE DE MUSIQUE EN BAS --- */
+    .music-player-bar {
+      position: fixed; bottom: 10px; left: 50%;
+      transform: translateX(-50%);
+      width: 90%; max-width: 600px; height: 80px;
       background: rgba(0, 0, 0, 0.8);
       border-radius: 20px; border: 1px solid #00d2ff;
-      overflow: hidden; z-index: 100;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      overflow: hidden; z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
 
     .mods-section {
@@ -126,13 +127,13 @@
     <div class="sub-counter">
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" width="25" alt="YT">
       <span>Abonnés : </span>
-      <span style="font-weight: bold; color: #FF0000;">15+</span>
+      <span style="font-weight: bold; color: #FF0000; font-size: 16px;">15+</span>
     </div>
     
     <a href="https://www.youtube.com/@jojordanos" class="btn yt" target="_blank">🎬 REJOINDRE LA CHAÎNE</a>
     
     <div class="chat-container">
-      <iframe src="https://e.widgetbot.io/channels/1437479306266939524/1437479308305109073?api=1"></iframe>
+      <iframe src="https://e.widgetbot.io/channels/1437479306266939524/1305802290770481154?api=1"></iframe>
     </div>
 
     <div class="mods-section">
@@ -145,9 +146,11 @@
     </a>
   </div>
 
-  <div class="music-player">
-    <iframe src="https://www.youtube.com/embed/O8M5MxS4hyk?list=RDEM7rT9oK-iB0f_uA7x_H_1pw&autoplay=0&controls=1&loop=1" 
-            allow="autoplay"></iframe>
+  <div class="music-player-bar">
+    <iframe width="100%" height="100%" 
+      src="https://www.youtube.com/embed/O8M5MxS4hyk" 
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
   </div>
 
 </body>
