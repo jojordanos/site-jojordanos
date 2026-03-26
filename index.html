@@ -7,83 +7,83 @@
   <style>
     :root {
       --bg-gradient: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-bg: rgba(255, 255, 255, 0.1);
       --text-color: #ffffff;
       --accent: #00d2ff;
     }
 
     /* CURSEUR ÉPÉE */
     html, body { cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), auto !important; }
-    a, button, .btn, iframe { cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), pointer !important; }
-
+    
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-gradient); background-size: 400% 400%;
+      background: var(--bg-gradient);
       display: flex; flex-direction: column; align-items: center;
       min-height: 100vh; margin: 0; padding: 20px; color: var(--text-color);
     }
 
     .card {
-      background: var(--card-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-      padding: 30px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5); width: 100%; max-width: 500px; text-align: center;
-      margin-bottom: 120px;
+      background: var(--card-bg); backdrop-filter: blur(20px);
+      padding: 40px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6); width: 100%; max-width: 400px; text-align: center;
+      margin-top: 50px;
     }
 
-    .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 15px; object-fit: cover; }
-
-    .chat-tabs { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
-    .tab-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white; padding: 10px 15px; border-radius: 12px; font-size: 11px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-    .tab-btn.active { background: var(--accent); box-shadow: 0 0 15px var(--accent); border-color: var(--accent); }
-
-    /* CADRE DU CHAT */
-    .chat-container { 
-      border-radius: 20px; 
-      overflow: hidden; 
-      height: 450px; /* On augmente la taille */
-      background: #2f3136; 
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      margin-top: 10px;
+    .profile-img { 
+      width: 150px; height: 150px; border-radius: 50%; 
+      border: 4px solid var(--accent); margin-bottom: 20px; 
+      object-fit: cover; box-shadow: 0 0 20px var(--accent);
     }
 
-    .music-player-bar { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); width: 95%; max-width: 600px; height: 80px; background: rgba(0, 0, 0, 0.9); border-radius: 20px; border: 1px solid var(--accent); overflow: hidden; z-index: 1000; }
-    iframe { border: none; width: 100%; height: 100%; }
+    h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+
+    .btn-yt {
+      display: block; background: #FF0000; color: white; padding: 15px;
+      text-decoration: none; border-radius: 15px; font-weight: bold; margin: 20px 0;
+      transition: 0.3s;
+    }
+    .btn-yt:hover { transform: scale(1.05); background: #cc0000; }
+
+    .mod-box {
+      background: rgba(0,0,0,0.4); padding: 15px; border-radius: 15px;
+      border: 1px solid #ffd700; margin-top: 20px;
+    }
+
+    /* Barre de musique discrète en haut */
+    .music-top {
+      width: 100%; max-width: 400px; height: 80px; margin-bottom: 20px;
+      border-radius: 15px; overflow: hidden; border: 1px solid var(--accent);
+    }
   </style>
 </head>
 <body>
 
+  <div class="music-top">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O8M5MxS4hyk" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+  </div>
+
   <div class="card">
-    <img src="j.jpg" alt="Logo" class="profile-img">
-    <h1 style="margin:0; font-size: 2.5em;">jojordanos</h1>
-    
-    <div style="color: #23a55a; font-size: 14px; font-weight: bold; margin-bottom: 15px;">● SITE OFFICIEL EN LIGNE</div>
+    <img src="j.jpg" alt="jojordanos" class="profile-img">
+    <h1>jojordanos</h1>
+    <p style="color: #23a55a; font-weight: bold;">● CHAÎNE OFFICIELLE</p>
 
-    <div class="chat-tabs">
-      <button class="tab-btn active" onclick="changeChat('1437479308305109073', this)">Général</button>
-      <button class="tab-btn" onclick="changeChat('1305802290770481154', this)">Nouveau Salon</button>
-    </div>
-    
-    <div class="chat-container">
-      <iframe id="discord-chat" src="https://e.widgetbot.io/channels/1437479306266939524/1437479308305109073?api=1"></iframe>
+    <a href="https://www.youtube.com/@jojordanos" class="btn-yt" target="_blank">S'ABONNER À LA CHAÎNE</a>
+
+    <div class="mod-box">
+      <span style="font-size: 10px; opacity: 0.6;">MODÉRATEUR</span><br>
+      <span style="color: #ffd700; font-size: 20px; font-weight: bold;">🛡️ Pacman</span>
     </div>
 
-    <div style="margin-top:20px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 10px;">
-        <div style="font-size: 10px; color: rgba(255,255,255,0.5);">MODÉRATEUR</div>
-        <div style="color: #ffd700; font-weight: bold; font-size: 18px;">🛡️ Pacman</div>
+    <div style="margin-top: 20px;">
+       <a href="https://discord.gg/CQgg8Pk9nz" style="color: var(--accent); text-decoration: none; font-weight: bold;">Rejoindre le Discord 🔊</a>
     </div>
   </div>
 
-  <div class="music-player-bar">
-    <iframe src="https://www.youtube.com/embed/O8M5MxS4hyk" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-  </div>
-
-  <script>
-    function changeChat(channelId, btn) {
-      document.getElementById('discord-chat').src = "https://e.widgetbot.io/channels/1437479306266939524/" + channelId + "?api=1";
-      let buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+    new WidgetBot({
+      server: '1437479306266939524',
+      channel: '1437479308305109073'
+    })
   </script>
 
 </body>
