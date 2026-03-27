@@ -3,88 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>jojordanos | Official Site</title>
+  <title>jojordanos | Hub Communautaire</title>
   <style>
     :root {
-      --bg-gradient: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-      --card-bg: rgba(255, 255, 255, 0.1);
-      --text-color: #ffffff;
+      --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       --accent: #00d2ff;
+      --discord-blurple: #5865F2;
     }
 
-    /* CURSEUR ÉPÉE */
-    html, body { cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), auto !important; }
-    
     body {
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg-gradient);
+      color: white; margin: 0; padding: 20px;
       display: flex; flex-direction: column; align-items: center;
-      min-height: 100vh; margin: 0; padding: 20px; color: var(--text-color);
     }
 
-    .card {
-      background: var(--card-bg); backdrop-filter: blur(20px);
-      padding: 40px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.6); width: 100%; max-width: 400px; text-align: center;
-      margin-top: 50px;
+    .header { text-align: center; margin-bottom: 30px; }
+    .profile-gif { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--accent); box-shadow: 0 0 15px var(--accent); }
+
+    /* --- LAYOUT DOUBLE COLONNE --- */
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: center;
     }
 
-    .profile-img { 
-      width: 150px; height: 150px; border-radius: 50%; 
-      border: 4px solid var(--accent); margin-bottom: 20px; 
-      object-fit: cover; box-shadow: 0 0 20px var(--accent);
+    .box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px;
     }
 
-    h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+    /* Colonne Vocale */
+    .voice-col { flex: 1; min-width: 300px; max-width: 350px; text-align: center; }
+    
+    /* Colonne Chat */
+    .chat-col { flex: 2; min-width: 350px; height: 500px; }
 
-    .btn-yt {
-      display: block; background: #FF0000; color: white; padding: 15px;
-      text-decoration: none; border-radius: 15px; font-weight: bold; margin: 20px 0;
+    .btn-join {
+      display: block; background: var(--discord-blurple);
+      color: white; padding: 12px; text-decoration: none;
+      border-radius: 10px; font-weight: bold; margin-top: 15px;
       transition: 0.3s;
     }
-    .btn-yt:hover { transform: scale(1.05); background: #cc0000; }
+    .btn-join:hover { transform: scale(1.03); background: #4752c4; }
 
-    .mod-box {
-      background: rgba(0,0,0,0.4); padding: 15px; border-radius: 15px;
-      border: 1px solid #ffd700; margin-top: 20px;
-    }
+    iframe { border: none; width: 100%; height: 100%; border-radius: 15px; }
 
-    /* Barre de musique discrète en haut */
-    .music-top {
-      width: 100%; max-width: 400px; height: 80px; margin-bottom: 20px;
-      border-radius: 15px; overflow: hidden; border: 1px solid var(--accent);
-    }
+    .mod-tag { color: #ffd700; font-weight: bold; margin-top: 10px; display: block; }
   </style>
 </head>
 <body>
 
-  <div class="music-top">
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O8M5MxS4hyk" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+  <div class="header">
+    <img src="jonas.gif" alt="Logo" class="profile-gif" onerror="this.src='https://i.gifer.com/ZZ5H.gif'">
+    <h1>Espace Communauté</h1>
+    <span class="mod-tag">🛡️ Modérateur : Pacman</span>
   </div>
 
-  <div class="card">
-    <img src="j.jpg" alt="jojordanos" class="profile-img">
-    <h1>jojordanos</h1>
-    <p style="color: #23a55a; font-weight: bold;">● CHAÎNE OFFICIELLE</p>
-
-    <a href="https://www.youtube.com/@jojordanos" class="btn-yt" target="_blank">S'ABONNER À LA CHAÎNE</a>
-
-    <div class="mod-box">
-      <span style="font-size: 10px; opacity: 0.6;">MODÉRATEUR</span><br>
-      <span style="color: #ffd700; font-size: 2px; font-weight: bold;">Pacman aussi surnommée pacdev</span>
+  <div class="main-container">
+    
+    <div class="box voice-col">
+      <h3 style="margin-top:0; color: var(--accent);">🔊 SALONS VOCAUX</h3>
+      <p style="font-size: 12px; opacity: 0.7;">Vois qui parle en direct :</p>
+      <div style="height: 300px;">
+        <iframe src="https://discord.com/widget?id=1437479306266939524&theme=dark" allowtransparency="true"></iframe>
+      </div>
+      <a href="https://discord.gg/CQgg8Pk9nz" class="btn-join" target="_blank">REJOINDRE LE VOCAL</a>
     </div>
 
-    <div style="margin-top: 20px;">
-       <a href="https://discord.gg/CQgg8Pk9nz" style="color: var(--accent); text-decoration: none; font-weight: bold;">Rejoindre le Discord 🔊</a>
+    <div class="box chat-col">
+      <h3 style="margin-top:0; color: var(--accent); text-align: center;">💬 TCHAT & GIFS</h3>
+      <iframe src="https://e.widgetbot.io/channels/1437479306266939524/1437479308305109073?api=1"></iframe>
     </div>
+
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-    new WidgetBot({
-      server: '1437479306266939524',
-      channel: '1437479308305109073'
-    })
-  </script>
+  <p style="margin-top: 30px; font-size: 12px; opacity: 0.5;">Astuce : Pour envoyer un GIF, utilise l'icône dans la barre de message du chat.</p>
 
 </body>
 </html>
