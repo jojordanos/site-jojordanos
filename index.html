@@ -3,88 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>jojordanos | Hub Communautaire</title>
+  <title>jojordanos | Hub Officiel</title>
   <style>
     :root {
       --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      --card-bg: rgba(255, 255, 255, 0.08);
       --accent: #00d2ff;
       --discord-blurple: #5865F2;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-gradient);
-      color: white; margin: 0; padding: 20px;
+      background: var(--bg-gradient); color: white;
       display: flex; flex-direction: column; align-items: center;
+      min-height: 100vh; margin: 0; padding: 20px;
     }
 
-    .header { text-align: center; margin-bottom: 30px; }
-    .profile-gif { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--accent); box-shadow: 0 0 15px var(--accent); }
-
-    /* --- LAYOUT DOUBLE COLONNE --- */
-    .main-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      width: 100%;
-      max-width: 1000px;
-      justify-content: center;
+    .card {
+      background: var(--card-bg); backdrop-filter: blur(15px);
+      padding: 30px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5); width: 100%; max-width: 550px; text-align: center;
     }
 
-    .box {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 15px;
+    .profile-gif { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 15px; }
+
+    /* BOUTON YOUTUBE ROUGE */
+    .btn-yt {
+      display: block; background: #FF0000; color: white; padding: 12px;
+      text-decoration: none; border-radius: 12px; font-weight: bold; margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
     }
 
-    /* Colonne Vocale */
-    .voice-col { flex: 1; min-width: 300px; max-width: 350px; text-align: center; }
+    /* ZONE DE CHAT (POUR DISCUTER) */
+    .chat-box {
+      height: 400px; border-radius: 20px; overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1); background: #2f3136; margin-bottom: 20px;
+    }
+
+    /* ZONE VOCALE (QUI EST EN LIGNE) */
+    .voice-box {
+      background: rgba(0,0,0,0.3); border-radius: 20px; padding: 15px;
+      border: 1px solid var(--discord-blurple);
+    }
+
+    iframe { border: none; width: 100%; height: 100%; }
     
-    /* Colonne Chat */
-    .chat-col { flex: 2; min-width: 350px; height: 500px; }
-
-    .btn-join {
-      display: block; background: var(--discord-blurple);
-      color: white; padding: 12px; text-decoration: none;
-      border-radius: 10px; font-weight: bold; margin-top: 15px;
-      transition: 0.3s;
+    .btn-join-vocal {
+      display: inline-block; margin-top: 10px; color: var(--accent);
+      text-decoration: none; font-weight: bold; font-size: 14px;
     }
-    .btn-join:hover { transform: scale(1.03); background: #4752c4; }
-
-    iframe { border: none; width: 100%; height: 100%; border-radius: 15px; }
-
-    .mod-tag { color: #ffd700; font-weight: bold; margin-top: 10px; display: block; }
   </style>
 </head>
 <body>
 
-  <div class="header">
+  <div class="card">
     <img src="jonas.gif" alt="Logo" class="profile-gif" onerror="this.src='https://i.gifer.com/ZZ5H.gif'">
-    <h1>Espace Communauté</h1>
-    <span class="mod-tag">🛡️ Modérateur : Pacman</span>
-  </div>
+    <h1 style="margin:0;">jojordanos</h1>
+    <p style="color: #23a55a; font-weight: bold; font-size: 14px; margin-bottom: 20px;">● CHAÎNE OFFICIELLE</p>
 
-  <div class="main-container">
-    
-    <div class="box voice-col">
-      <h3 style="margin-top:0; color: var(--accent);">🔊 SALONS VOCAUX</h3>
-      <p style="font-size: 12px; opacity: 0.7;">Vois qui parle en direct :</p>
-      <div style="height: 300px;">
-        <iframe src="https://discord.com/widget?id=1437479306266939524&theme=dark" allowtransparency="true"></iframe>
-      </div>
-      <a href="https://discord.gg/CQgg8Pk9nz" class="btn-join" target="_blank">REJOINDRE LE VOCAL</a>
-    </div>
+    <a href="https://www.youtube.com/@jojordanos" class="btn-yt" target="_blank">S'ABONNER À LA CHAÎNE</a>
 
-    <div class="box chat-col">
-      <h3 style="margin-top:0; color: var(--accent); text-align: center;">💬 TCHAT & GIFS</h3>
+    <div class="chat-box">
       <iframe src="https://e.widgetbot.io/channels/1437479306266939524/1437479308305109073?api=1"></iframe>
     </div>
 
-  </div>
+    <div class="voice-box">
+      <div style="font-size: 11px; color: var(--discord-blurple); font-weight: bold; margin-bottom: 8px;">🔊 SALONS VOCAUX</div>
+      <iframe src="https://discord.com/widget?id=1437479306266939524&theme=dark" height="150" allowtransparency="true"></iframe>
+      <br>
+      <a href="https://discord.gg/CQgg8Pk9nz" class="btn-join-vocal" target="_blank">Rejoindre le Vocal 🔊</a>
+    </div>
 
-  <p style="margin-top: 30px; font-size: 12px; opacity: 0.5;">Astuce : Pour envoyer un GIF, utilise l'icône dans la barre de message du chat.</p>
+    <div style="margin-top:20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+      <span style="font-size: 11px; opacity: 0.5;">MODÉRATEUR</span><br>
+      <span style="color: #ffd700; font-weight: bold;">🛡️ Pacman</span>
+    </div>
+  </div>
 
 </body>
 </html>
