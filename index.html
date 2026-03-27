@@ -3,46 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>jojordanos | Hub Officiel</title>
+  <title>jojordanos | Hub Anime Hub</title>
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      --card-bg: rgba(255, 255, 255, 0.08);
+      --card-bg: rgba(15, 12, 41, 0.7); /* Fond de carte plus transparent */
       --accent: #00d2ff;
       --discord-blurple: #5865F2;
+      --text-color: #ffffff;
     }
 
+    /* --- CURSEUR ÉPÉE (Toujours actif !) --- */
+    html, body { cursor: url('https://cur.cursors-4u.net/games/gam-4/gam373.cur'), auto !important; }
+    
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-gradient); color: white;
+      margin: 0; padding: 20px; color: var(--text-color);
       display: flex; flex-direction: column; align-items: center;
-      min-height: 100vh; margin: 0; padding: 20px;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* --- VIDÉO DE FOND ANIME --- */
+    #video-background {
+      position: fixed;
+      right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      z-index: -100; /* Derrière tout le reste */
+      object-fit: cover;
+      filter: brightness(0.6); /* Pour que le texte reste lisible */
+    }
+
+    /* --- CARTE PRINCIPALE --- */
     .card {
-      background: var(--card-bg); backdrop-filter: blur(15px);
-      padding: 30px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5); width: 100%; max-width: 550px; text-align: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      padding: 30px; border-radius: 30px;
+      border: 2px solid rgba(0, 210, 255, 0.3);
+      box-shadow: 0 0 30px rgba(0, 210, 255, 0.5);
+      width: 100%; max-width: 550px; text-align: center;
+      margin-top: 20px;
     }
 
-    .profile-gif { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 15px; }
+    /* STYLE POUR TON LOGO (GIF ou Image) */
+    .profile-gif { width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--accent); margin-bottom: 15px; box-shadow: 0 0 20px var(--accent); }
 
-    /* BOUTON YOUTUBE ROUGE */
+    /* BOUTON YOUTUBE */
     .btn-yt {
       display: block; background: #FF0000; color: white; padding: 12px;
       text-decoration: none; border-radius: 12px; font-weight: bold; margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); transition: transform 0.2s;
     }
+    .btn-yt:hover { transform: scale(1.03); }
 
-    /* ZONE DE CHAT (POUR DISCUTER) */
+    /* ZONE DE CHAT DISCORD */
     .chat-box {
       height: 400px; border-radius: 20px; overflow: hidden;
-      border: 2px solid rgba(255, 255, 255, 0.1); background: #2f3136; margin-bottom: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.1); background: rgba(47, 49, 54, 0.8); margin-bottom: 20px;
     }
 
-    /* ZONE VOCALE (QUI EST EN LIGNE) */
+    /* ZONE VOCALE */
     .voice-box {
-      background: rgba(0,0,0,0.3); border-radius: 20px; padding: 15px;
+      background: rgba(0,0,0,0.5); border-radius: 20px; padding: 15px;
       border: 1px solid var(--discord-blurple);
     }
 
@@ -56,10 +77,14 @@
 </head>
 <body>
 
+  <video autoplay loop muted playsinline id="video-background">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-city-landscape-by-night-animated-background-27606-large.mp4" type="video/mp4">
+  </video>
+
   <div class="card">
     <img src="jonas.gif" alt="Logo" class="profile-gif" onerror="this.src='https://i.gifer.com/ZZ5H.gif'">
-    <h1 style="margin:0;">jojordanos</h1>
-    <p style="color: #23a55a; font-weight: bold; font-size: 14px; margin-bottom: 20px;">● CHAÎNE OFFICIELLE</p>
+    <h1 style="margin:0; text-transform: uppercase; letter-spacing: 2px;">jojordanos</h1>
+    <p style="color: #23a55a; font-weight: bold; font-size: 14px; margin-bottom: 20px;">● HUB OFFICIEL ●</p>
 
     <a href="https://www.youtube.com/@jojordanos" class="btn-yt" target="_blank">S'ABONNER À LA CHAÎNE</a>
 
@@ -76,7 +101,7 @@
 
     <div style="margin-top:20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
       <span style="font-size: 11px; opacity: 0.5;">MODÉRATEUR</span><br>
-      <span style="color: #ffd700; font-weight: bold;">🛡️ Pacman</span>
+      <span style="color: #ffd700; font-weight: bold; font-size: 18px;">🛡️ Pacman</span>
     </div>
   </div>
 
