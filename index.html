@@ -102,3 +102,36 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site - Jojordanos</title>
+    <style>
+        /* Style de base pour ton site (tu as sûrement déjà ça) */
+        body { margin: 0; font-family: sans-serif; }
+
+        /* --- STYLE POUR LE JEU (À AJOUTER) --- */
+        #game-container {
+            position: relative; /* Pour positionner le score à l'intérieur */
+            width: 100%;       /* Prend toute la largeur */
+            height: 80vh;      /* Prend 80% de la hauteur de l'écran */
+            overflow: hidden;   /* Empêche les barres de défilement */
+            border-bottom: 5px solid #333; /* Séparation visuelle */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        </div>
+
+    <div style="padding: 20px;">
+        <h1>Bienvenue sur mon site</h1>
+        <p>Utilise Z, Q, S, D pour déplacer le Mii sur le plateau ci-dessus.</p>
+    </div>
+
+    <script type="module" src="aventure.js"></script>
+
+</body>
+</html>
